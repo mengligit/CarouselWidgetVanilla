@@ -1,0 +1,51 @@
+.Container {
+    width: 1000px;
+    display: flex;
+  }
+  
+  .LeftArrow,
+  .RightArrow {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .Container {
+    width: 1000px;
+    display: flex;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+  }
+  
+  .image {
+    width: 600px;
+    height: 400px;
+  }
+  
+  .secondCon {
+    width: 780px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 3px;
+    cursor: pointer;
+    background-color: grey;
+  }
+  
