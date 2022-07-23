@@ -26,7 +26,7 @@
     width: 700px;
   }
   
-  .image {
+  #pic {
     width: 600px;
     height: 400px;
   }
@@ -47,5 +47,9 @@
     margin: 3px;
     cursor: pointer;
     background-color: grey;
+  }
+
+  @keyframes frame {
+    0% {transform:translateX(-50%);}
   }
   

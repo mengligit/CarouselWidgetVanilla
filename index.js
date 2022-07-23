@@ -19,6 +19,17 @@ const autoplay = () => {
   }, 2000);
 }
 
+const animationFunc = (index) => {
+  const imageDiv = document.getElementsByClassName("center")[0];
+  const image = document.getElementById("pic");
+  imageDiv.removeChild(image);
+  const newImg = document.createElement("img");
+  newImg.setAttribute("id", 'pic');
+  newImg.style.animation = "frame 1s";
+  newImg.src = imageArr[index].path;
+  imageDiv.appendChild(newImg);
+}
+
 const retrive = async () => {
   imageArr = await getImages();
   jsImg.src = imageArr[0].path;
@@ -35,10 +46,11 @@ const retrive = async () => {
 
     div.addEventListener("click", () => {
       index = i;
-      jsImg.src = imageArr[index].path;
+
+      animationFunc(index);
+
       div.style.backgroundColor = "purple";
       changeColor();
-      console.log("click on ", index);
       autoplay();
     });
     secondCon.appendChild(div);
@@ -48,13 +60,16 @@ const retrive = async () => {
 retrive();
 autoplay();
 
+
 const moveRight = () => {
   if (index + 1 < imageArr.length) {
     index = index + 1;
   } else {
     index = 0;
   }
-  jsImg.src = imageArr[index].path;
+  
+  animationFunc(index);
+  
   changeColor();
   autoplay();
 };
@@ -65,11 +80,14 @@ const moveLeft = () => {
   } else {
     index = imageArr.length - 1;
   }
-  jsImg.src = imageArr[index].path;
+
+  animationFunc(index);
+
   changeColor();
   autoplay();
 };
 
+//change color for the dots
 const changeColor = () => {
   for (let i = 0; i < imageArr.length; i++) {
     const selectedDot = document.getElementById("Dot_" + i);
